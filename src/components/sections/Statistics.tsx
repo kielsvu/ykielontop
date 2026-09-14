@@ -10,7 +10,6 @@ const skills = [
   'JavaScript',
   'TypeScript',
   'Next.js',
-  'Node.js',
   'HTML',
   'CSS',
   'SQL',
@@ -21,16 +20,6 @@ const skills = [
   'PHP',
   'Java',
   'Kotlin',
-  'Go',
-  'Rust',
-  'Swift',
-  'Ruby',
-  'Dart',
-  'R',
-  'MATLAB',
-  'Perl',
-  'Haskell',
-  'Scala',
 ]
 
 const chartWidth = 900
@@ -49,10 +38,10 @@ const points = statistics.affectedUsers.map((item, index) => {
 const linePath = points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ')
 
 export default function Statistics() {
-  const totalAffected = statistics.current ?? 0
+  const totalAffected = statistics.affectedUsers[statistics.affectedUsers.length - 1]?.count ?? 0
 
   return (
-    <section id="statistics" style={{ position: 'relative', padding: '30px 24px 100px' }}>
+    <section id="statistics" style={{ position: 'relative', padding: '18px 24px 88px' }}>
       <div style={{ maxWidth: 980, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -88,15 +77,15 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.08 }}
-          style={{ marginTop: 46 }}
+          style={{ marginTop: 34 }}
         >
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16, marginBottom: 14 }}>
             <div>
               <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                Nuked Statistic
+                Ykiel / Statistics
               </span>
               <h2 style={{ margin: '8px 0 0', fontSize: 'clamp(30px, 6vw, 52px)', lineHeight: 1, letterSpacing: '-0.04em', fontWeight: 800 }}>
-                Affected Members
+                Affected Users
               </h2>
             </div>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>
@@ -114,27 +103,12 @@ export default function Statistics() {
               overflow: 'hidden',
             }}
           >
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                alignItems: 'start',
-                gap: 24,
-                marginBottom: 18,
-              }}
-            >
-              <div>
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
-                  CURRENT
-                </span>
-                <div style={{ fontSize: 'clamp(32px, 7vw, 50px)', lineHeight: 1, fontWeight: 800, marginTop: 4 }}>
-                  {totalAffected.toLocaleString()}
-                </div>
-              </div>
-              <div style={{ textAlign: 'right' }}>
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
-                  AFFECTED MEMBERS
-                </span>
+            <div style={{ marginBottom: 8 }}>
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
+                CURRENT
+              </span>
+              <div style={{ fontSize: 'clamp(32px, 7vw, 50px)', lineHeight: 1, fontWeight: 800, marginTop: 4 }}>
+                {totalAffected.toLocaleString()}
               </div>
             </div>
 
@@ -178,7 +152,7 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          style={{ marginTop: 52 }}
+          style={{ marginTop: 42 }}
         >
           <div
             style={{
@@ -191,22 +165,7 @@ export default function Statistics() {
               background: 'var(--bg-card)',
             }}
           >
-            <img
-              src="/assets/bandd.png"
-              alt="Ykiel visual"
-              draggable={false}
-              onContextMenu={(event) => event.preventDefault()}
-              onDragStart={(event) => event.preventDefault()}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block',
-                userSelect: 'none',
-                WebkitUserDrag: 'none',
-                WebkitTouchCallout: 'none',
-              }}
-            />
+            <img src="/assets/bandd.png" alt="Ykiel visual" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
         </motion.div>
 
@@ -215,10 +174,10 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.12 }}
-          style={{ marginTop: 44 }}
+          style={{ marginTop: 36 }}
         >
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-            Config.json
+            Documentation JSON
           </span>
           <pre
             style={{
