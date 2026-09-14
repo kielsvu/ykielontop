@@ -172,7 +172,7 @@ export default function WelcomeScreen() {
               whiteSpace: 'nowrap',
             }}
           >
-            Ykiel Statistics
+            Statistics
           </motion.h1>
         </div>
 
