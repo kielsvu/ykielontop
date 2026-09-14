@@ -13,6 +13,11 @@ export default function Home() {
   const [showApp, setShowApp] = useState(true)
 
   useEffect(() => {
+    if (window.location.pathname === '/') {
+      window.history.scrollRestoration = 'manual'
+      window.scrollTo(0, 0)
+    }
+
     const navEntries = performance.getEntriesByType('navigation')
     const navigationType =
       navEntries.length > 0
@@ -59,7 +64,7 @@ export default function Home() {
       />
 
       <div style={{ position: 'relative', zIndex: 2 }}>
-        <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '120px 24px 80px' }}>
+        <section id="home" style={{ minHeight: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '72px 24px 28px' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={showApp ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -68,9 +73,9 @@ export default function Home() {
           >
             <div
               style={{
-                width: 118,
-                height: 118,
-                margin: '0 auto 24px',
+                width: 128,
+                height: 128,
+                margin: '0 auto 18px',
                 borderRadius: '50%',
                 overflow: 'hidden',
                 border: '1px solid var(--border)',

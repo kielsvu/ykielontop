@@ -89,3 +89,25 @@ textarea {
 .custom-scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(255,255,255,0.2);
 }
+/* Keep the first screen stable on small mobile viewports. */
+@media (max-width: 767px) {
+  #home {
+    padding-top: 56px !important;
+    padding-bottom: 20px !important;
+  }
+
+  #home h1 {
+    margin-top: 10px !important;
+    margin-bottom: 12px !important;
+  }
+
+  #statistics {
+    padding-top: 12px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #home {
+    padding-top: 88px !important;
+  }
+}
