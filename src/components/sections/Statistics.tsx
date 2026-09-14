@@ -41,7 +41,7 @@ export default function Statistics() {
   const totalAffected = statistics.affectedUsers[statistics.affectedUsers.length - 1]?.count ?? 0
 
   return (
-    <section id="statistics" style={{ position: 'relative', padding: '30px 24px 100px' }}>
+    <section id="statistics" style={{ position: 'relative', padding: '18px 24px 88px' }}>
       <div style={{ maxWidth: 980, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,7 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.08 }}
-          style={{ marginTop: 46 }}
+          style={{ marginTop: 34 }}
         >
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16, marginBottom: 14 }}>
             <div>
@@ -152,7 +152,7 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          style={{ marginTop: 52 }}
+          style={{ marginTop: 42 }}
         >
           <div
             style={{
@@ -174,7 +174,7 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.12 }}
-          style={{ marginTop: 44 }}
+          style={{ marginTop: 36 }}
         >
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
             Documentation JSON
