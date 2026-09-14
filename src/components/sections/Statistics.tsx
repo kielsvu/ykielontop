@@ -191,7 +191,22 @@ export default function Statistics() {
               background: 'var(--bg-card)',
             }}
           >
-            <img src="/assets/bandd.png" alt="Ykiel visual" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img
+              src="/assets/bandd.png"
+              alt="Ykiel visual"
+              draggable={false}
+              onContextMenu={(event) => event.preventDefault()}
+              onDragStart={(event) => event.preventDefault()}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block',
+                userSelect: 'none',
+                WebkitUserDrag: 'none',
+                WebkitTouchCallout: 'none',
+              }}
+            />
           </div>
         </motion.div>
 
