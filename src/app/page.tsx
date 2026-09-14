@@ -86,15 +86,15 @@ export default function Home() {
             </div>
 
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-              Personal Documentation
+              ykiel Documentation
             </span>
 
             <h1 style={{ margin: '12px 0 14px', fontSize: 'clamp(52px, 11vw, 92px)', lineHeight: 0.95, letterSpacing: '-0.06em', fontWeight: 800 }}>
-              Ykiel
+              ykiel
             </h1>
 
             <p style={{ maxWidth: 560, margin: '0 auto', color: 'var(--text-secondary)', fontSize: 14, lineHeight: 1.8 }}>
-              A personal statistics page documenting affected-user data and selected development technologies.
+              A personal record of ykiel's server wipe activity
             </p>
           </motion.div>
         </section>
