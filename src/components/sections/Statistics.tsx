@@ -103,13 +103,28 @@ export default function Statistics() {
               overflow: 'hidden',
             }}
           >
-            <div style={{ marginBottom: 8 }}>
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
-                CURRENT
-              </span>
-              <div style={{ fontSize: 'clamp(32px, 7vw, 50px)', lineHeight: 1, fontWeight: 800, marginTop: 4 }}>
-                {totalAffected.toLocaleString()}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'flex-end',
+                justifyContent: 'space-between',
+                gap: 16,
+                marginBottom: 14,
+                paddingBottom: 16,
+                borderBottom: '1px solid var(--border)',
+              }}
+            >
+              <div>
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
+                  CURRENT
+                </span>
+                <div style={{ fontSize: 'clamp(36px, 8vw, 52px)', lineHeight: 1, fontWeight: 800, marginTop: 5 }}>
+                  {totalAffected.toLocaleString()}
+                </div>
               </div>
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>
+                AFFECTED USERS
+              </span>
             </div>
 
             <div style={{ width: '100%', overflowX: 'auto' }}>
