@@ -10,6 +10,7 @@ const skills = [
   'JavaScript',
   'TypeScript',
   'Next.js',
+  'Node.js',
   'HTML',
   'CSS',
   'SQL',
@@ -20,6 +21,16 @@ const skills = [
   'PHP',
   'Java',
   'Kotlin',
+  'Go',
+  'Rust',
+  'Swift',
+  'Ruby',
+  'Dart',
+  'R',
+  'MATLAB',
+  'Perl',
+  'Haskell',
+  'Scala',
 ]
 
 const chartWidth = 900
@@ -41,7 +52,7 @@ export default function Statistics() {
   const totalAffected = statistics.affectedUsers[statistics.affectedUsers.length - 1]?.count ?? 0
 
   return (
-    <section id="statistics" style={{ position: 'relative', padding: '18px 24px 88px' }}>
+    <section id="statistics" style={{ position: 'relative', padding: '30px 24px 100px' }}>
       <div style={{ maxWidth: 980, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -77,7 +88,7 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.08 }}
-          style={{ marginTop: 34 }}
+          style={{ marginTop: 46 }}
         >
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16, marginBottom: 14 }}>
             <div>
@@ -105,26 +116,29 @@ export default function Statistics() {
           >
             <div
               style={{
-                display: 'flex',
-                alignItems: 'flex-end',
-                justifyContent: 'space-between',
-                gap: 16,
-                marginBottom: 14,
-                paddingBottom: 16,
-                borderBottom: '1px solid var(--border)',
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                alignItems: 'start',
+                gap: 24,
+                marginBottom: 18,
               }}
             >
               <div>
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
                   CURRENT
                 </span>
-                <div style={{ fontSize: 'clamp(36px, 8vw, 52px)', lineHeight: 1, fontWeight: 800, marginTop: 5 }}>
+                <div style={{ fontSize: 'clamp(32px, 7vw, 50px)', lineHeight: 1, fontWeight: 800, marginTop: 4 }}>
                   {totalAffected.toLocaleString()}
                 </div>
               </div>
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>
-                AFFECTED USERS
-              </span>
+              <div style={{ textAlign: 'right' }}>
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
+                  AFFECTED USERS
+                </span>
+                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', marginTop: 8 }}>
+                  AUGUST — DECEMBER
+                </div>
+              </div>
             </div>
 
             <div style={{ width: '100%', overflowX: 'auto' }}>
@@ -167,7 +181,7 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          style={{ marginTop: 42 }}
+          style={{ marginTop: 52 }}
         >
           <div
             style={{
@@ -189,7 +203,7 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.12 }}
-          style={{ marginTop: 36 }}
+          style={{ marginTop: 44 }}
         >
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
             Documentation JSON
