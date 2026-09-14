@@ -49,7 +49,7 @@ const points = statistics.affectedUsers.map((item, index) => {
 const linePath = points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ')
 
 export default function Statistics() {
-  const totalAffected = statistics.affectedUsers[statistics.affectedUsers.length - 1]?.count ?? 0
+  const totalAffected = statistics.current ?? 0
 
   return (
     <section id="statistics" style={{ position: 'relative', padding: '30px 24px 100px' }}>
