@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import statistics from '@/data/statistics.json'
+import documentation from '@/data/documentation.json'
 
 const skills = [
   'Python',
@@ -40,50 +41,18 @@ export default function Statistics() {
   const totalAffected = statistics.affectedUsers[statistics.affectedUsers.length - 1]?.count ?? 0
 
   return (
-    <section id="statistics" style={{ position: 'relative', padding: '100px 24px 140px' }}>
+    <section id="statistics" style={{ position: 'relative', padding: '30px 24px 100px' }}>
       <div style={{ maxWidth: 980, margin: '0 auto' }}>
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8 }}
-        >
-          <span
-            style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: 11,
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-            }}
-          >
-            Ykiel / Statistics
-          </span>
-
-          <h2
-            style={{
-              margin: '12px 0 0',
-              fontSize: 'clamp(32px, 6vw, 58px)',
-              lineHeight: 1,
-              letterSpacing: '-0.04em',
-              fontWeight: 800,
-            }}
-          >
-            Affected Users
-          </h2>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          style={{ marginTop: 70 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7 }}
         >
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
             Tech Stack
           </span>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 16 }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 14 }}>
             {skills.map((skill) => (
               <span
                 key={skill}
@@ -104,80 +73,92 @@ export default function Statistics() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          style={{
-            marginTop: 34,
-            border: '1px solid var(--border)',
-            borderRadius: 24,
-            background: 'rgba(26,26,26,0.62)',
-            backdropFilter: 'blur(12px)',
-            padding: '26px 22px 20px',
-            overflow: 'hidden',
-          }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, delay: 0.08 }}
+          style={{ marginTop: 46 }}
         >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 20, marginBottom: 18 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16, marginBottom: 14 }}>
             <div>
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
-                CURRENT
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+                Ykiel / Statistics
               </span>
-              <div style={{ fontSize: 'clamp(34px, 7vw, 54px)', lineHeight: 1, fontWeight: 800, marginTop: 5 }}>
-                {totalAffected.toLocaleString()}
-              </div>
+              <h2 style={{ margin: '8px 0 0', fontSize: 'clamp(30px, 6vw, 52px)', lineHeight: 1, letterSpacing: '-0.04em', fontWeight: 800 }}>
+                Affected Users
+              </h2>
             </div>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)' }}>
+            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>
               August — December
             </span>
           </div>
 
-          <div style={{ width: '100%', overflowX: 'auto' }}>
-            <svg viewBox={`0 0 ${chartWidth} ${chartHeight}`} width="100%" role="img" aria-label="Affected users line chart from August to December">
-              {[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
-                const y = padding.top + innerHeight - ratio * innerHeight
-                return (
-                  <line
-                    key={ratio}
-                    x1={padding.left}
-                    x2={chartWidth - padding.right}
-                    y1={y}
-                    y2={y}
-                    stroke="rgba(255,255,255,0.07)"
-                    strokeWidth="1"
-                  />
-                )
-              })}
+          <div
+            style={{
+              border: '1px solid var(--border)',
+              borderRadius: 24,
+              background: 'rgba(26,26,26,0.62)',
+              backdropFilter: 'blur(12px)',
+              padding: '24px 18px 18px',
+              overflow: 'hidden',
+            }}
+          >
+            <div style={{ marginBottom: 8 }}>
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
+                CURRENT
+              </span>
+              <div style={{ fontSize: 'clamp(32px, 7vw, 50px)', lineHeight: 1, fontWeight: 800, marginTop: 4 }}>
+                {totalAffected.toLocaleString()}
+              </div>
+            </div>
 
-              <path d={linePath} fill="none" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+            <div style={{ width: '100%', overflowX: 'auto' }}>
+              <svg viewBox={`0 0 ${chartWidth} ${chartHeight}`} width="100%" role="img" aria-label="Affected users line chart from August to December">
+                {[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
+                  const y = padding.top + innerHeight - ratio * innerHeight
+                  return (
+                    <line
+                      key={ratio}
+                      x1={padding.left}
+                      x2={chartWidth - padding.right}
+                      y1={y}
+                      y2={y}
+                      stroke="rgba(255,255,255,0.07)"
+                      strokeWidth="1"
+                    />
+                  )
+                })}
 
-              {points.map((point) => (
-                <g key={point.month}>
-                  <circle cx={point.x} cy={point.y} r="5" fill="var(--bg-primary)" stroke="var(--text-primary)" strokeWidth="2" />
-                  <text x={point.x} y={chartHeight - 20} textAnchor="middle" fill="var(--text-muted)" fontSize="12" fontFamily="DM Mono, monospace">
-                    {point.month}
-                  </text>
-                  <text x={point.x} y={point.y - 14} textAnchor="middle" fill="var(--text-secondary)" fontSize="11" fontFamily="DM Mono, monospace">
-                    {point.count.toLocaleString()}
-                  </text>
-                </g>
-              ))}
-            </svg>
+                <path d={linePath} fill="none" stroke="var(--text-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+
+                {points.map((point) => (
+                  <g key={point.month}>
+                    <circle cx={point.x} cy={point.y} r="5" fill="var(--bg-primary)" stroke="var(--text-primary)" strokeWidth="2" />
+                    <text x={point.x} y={chartHeight - 20} textAnchor="middle" fill="var(--text-muted)" fontSize="12" fontFamily="DM Mono, monospace">
+                      {point.month}
+                    </text>
+                    <text x={point.x} y={point.y - 14} textAnchor="middle" fill="var(--text-secondary)" fontSize="11" fontFamily="DM Mono, monospace">
+                      {point.count.toLocaleString()}
+                    </text>
+                  </g>
+                ))}
+              </svg>
+            </div>
           </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          style={{ marginTop: 90 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          style={{ marginTop: 52 }}
         >
           <div
             style={{
               width: '100%',
               aspectRatio: '16 / 7',
-              minHeight: 220,
+              minHeight: 180,
               borderRadius: 24,
               overflow: 'hidden',
               border: '1px solid var(--border)',
@@ -189,19 +170,19 @@ export default function Statistics() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8, delay: 0.25 }}
-          style={{ marginTop: 70 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, delay: 0.12 }}
+          style={{ marginTop: 44 }}
         >
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-            Local JSON Data
+            Documentation JSON
           </span>
           <pre
             style={{
-              marginTop: 16,
-              padding: 22,
+              marginTop: 12,
+              padding: 20,
               borderRadius: 20,
               border: '1px solid var(--border)',
               background: 'rgba(13,13,13,0.82)',
@@ -212,7 +193,7 @@ export default function Statistics() {
               overflowX: 'auto',
             }}
           >
-            {JSON.stringify(statistics, null, 2)}
+            {JSON.stringify(documentation, null, 2)}
           </pre>
         </motion.div>
       </div>
