@@ -235,10 +235,12 @@ export default function Statistics() {
           >
             <span style={{ color: 'var(--text-muted)' }}>{'{'}</span>{'\n'}
             <span style={{ color: 'var(--accent)' }}>  "name"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.name}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "role"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.role}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "focus"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.focus}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "projects"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--accent)' }}>{documentation.projects}</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "status"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.status}&quot;</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "title"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.title}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "yg's"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation["yg's"]}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "bot"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.bot}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "server wipe"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation["server wipe"]}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "auto_roles"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.auto_roles}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "message"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.message}&quot;</span>{'\n'}
             <span style={{ color: 'var(--text-muted)' }}>{'}'}</span>
           </pre>
         </motion.div>
