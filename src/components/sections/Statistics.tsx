@@ -133,7 +133,7 @@ export default function Statistics() {
               </div>
               <div style={{ textAlign: 'right' }}>
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
-                  AFFECTED USERS
+                  AFFECTED MEMBERS
                 </span>
               </div>
             </div>
