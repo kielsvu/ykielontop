@@ -233,7 +233,13 @@ export default function Statistics() {
               overflowX: 'auto',
             }}
           >
-            {JSON.stringify(documentation, null, 2)}
+            <span style={{ color: 'var(--text-muted)' }}>{'{'}</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "name"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.name}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "role"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.role}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "focus"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.focus}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "projects"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--accent)' }}>{documentation.projects}</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
+            <span style={{ color: 'var(--accent)' }}>  "status"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.status}&quot;</span>{'\n'}
+            <span style={{ color: 'var(--text-muted)' }}>{'}'}</span>
           </pre>
         </motion.div>
       </div>
