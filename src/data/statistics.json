@@ -1,4 +1,5 @@
 {
+  "current": 6522,
   "affectedUsers": [
     { "month": "August", "count": 214 },
     { "month": "September", "count": 6522 },
