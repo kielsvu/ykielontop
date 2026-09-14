@@ -93,7 +93,7 @@ export default function Statistics() {
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16, marginBottom: 14 }}>
             <div>
               <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                Ykiel / Statistics
+                Nuked Statistic
               </span>
               <h2 style={{ margin: '8px 0 0', fontSize: 'clamp(30px, 6vw, 52px)', lineHeight: 1, letterSpacing: '-0.04em', fontWeight: 800 }}>
                 Affected Users
@@ -135,9 +135,6 @@ export default function Statistics() {
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
                   AFFECTED USERS
                 </span>
-                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', marginTop: 8 }}>
-                  AUGUST — DECEMBER
-                </div>
               </div>
             </div>
 
@@ -206,7 +203,7 @@ export default function Statistics() {
           style={{ marginTop: 44 }}
         >
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-            Documentation JSON
+            Config.json
           </span>
           <pre
             style={{
