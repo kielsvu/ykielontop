@@ -4,6 +4,29 @@ import { motion } from 'framer-motion'
 import statistics from '@/data/statistics.json'
 import documentation from '@/data/documentation.json'
 
+const highlightJson = (value: unknown) => {
+  const json = JSON.stringify(value, null, 2)
+  const escaped = json
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+
+  const highlighted = escaped.replace(
+    /("(?:\\.|[^"\\])*")(\s*:)?|(-?\d+(?:\.\d+)?)|\b(true|false|null)\b|([{}[\],:])/g,
+    (match, stringToken, colon, numberToken, booleanToken, punctuation) => {
+      if (stringToken) {
+        const className = colon ? 'json-key' : 'json-string'
+        return `<span class="${className}">${stringToken}</span>${colon ? '<span class="json-punctuation">:</span>' : ''}`
+      }
+      if (numberToken) return `<span class="json-number">${numberToken}</span>`
+      if (booleanToken) return `<span class="json-boolean">${booleanToken}</span>`
+      return `<span class="json-punctuation">${punctuation}</span>`
+    }
+  )
+
+  return { __html: highlighted }
+}
+
 const skills = [
   'Python',
   'React',
@@ -219,6 +242,14 @@ export default function Statistics() {
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
             Config.json
           </span>
+          <style>{`
+            .json-key { color: #B284FF; }
+            .json-string { color: var(--text-primary); }
+            .json-number { color: #A8D8FF; }
+            .json-boolean { color: #C8A8FF; }
+            .json-punctuation { color: var(--text-muted); }
+          `}</style>
+
           <pre
             style={{
               marginTop: 12,
@@ -233,15 +264,10 @@ export default function Statistics() {
               overflowX: 'auto',
             }}
           >
-            <span style={{ color: 'var(--text-muted)' }}>{'{'}</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "name"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.name}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "title"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.title}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "yg's"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation["yg's"]}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "bot"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.bot}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "server wipe"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation["server wipe"]}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "auto_roles"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.auto_roles}&quot;</span><span style={{ color: 'var(--text-muted)' }}>,</span>{'\n'}
-            <span style={{ color: 'var(--accent)' }}>  "message"</span><span style={{ color: 'var(--text-muted)' }}>:</span> <span style={{ color: 'var(--text-primary)' }}>&quot;{documentation.message}&quot;</span>{'\n'}
-            <span style={{ color: 'var(--text-muted)' }}>{'}'}</span>
+            <code
+              dangerouslySetInnerHTML={highlightJson(documentation)}
+              style={{ font: 'inherit' }}
+            />
           </pre>
         </motion.div>
       </div>
