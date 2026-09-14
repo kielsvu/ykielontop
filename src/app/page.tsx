@@ -82,34 +82,19 @@ export default function Home() {
                 background: 'var(--bg-card)',
               }}
             >
-              <img
-                src="/assets/PP.png"
-                alt="Ykiel profile"
-                draggable={false}
-                onContextMenu={(event) => event.preventDefault()}
-                onDragStart={(event) => event.preventDefault()}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  display: 'block',
-                  userSelect: 'none',
-                  WebkitUserDrag: 'none',
-                  WebkitTouchCallout: 'none',
-                }}
-              />
+              <img src="/assets/PP.png" alt="Ykiel profile" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
 
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-              ykiel Documentation
+              Personal Documentation
             </span>
 
             <h1 style={{ margin: '12px 0 14px', fontSize: 'clamp(52px, 11vw, 92px)', lineHeight: 0.95, letterSpacing: '-0.06em', fontWeight: 800 }}>
-              ykiel
+              Ykiel
             </h1>
 
             <p style={{ maxWidth: 560, margin: '0 auto', color: 'var(--text-secondary)', fontSize: 14, lineHeight: 1.8 }}>
-              A personal record of ykiel's server wipe activity
+              A personal statistics page documenting affected-user data and selected development technologies.
             </p>
           </motion.div>
         </section>
