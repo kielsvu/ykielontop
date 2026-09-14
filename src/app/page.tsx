@@ -82,7 +82,22 @@ export default function Home() {
                 background: 'var(--bg-card)',
               }}
             >
-              <img src="/assets/PP.png" alt="Ykiel profile" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <img
+                src="/assets/PP.png"
+                alt="Ykiel profile"
+                draggable={false}
+                onContextMenu={(event) => event.preventDefault()}
+                onDragStart={(event) => event.preventDefault()}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                  userSelect: 'none',
+                  WebkitUserDrag: 'none',
+                  WebkitTouchCallout: 'none',
+                }}
+              />
             </div>
 
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
