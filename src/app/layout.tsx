@@ -2,8 +2,8 @@ import "./globals.css";
 import RefreshRedirect from '@/components/RefreshRedirect'
 
 export const metadata = {
-  title: "Ykiel Statistics",
-  description: "Ykiel personal statistics and documentation.",
+  title: "ykiel",
+  description: "ykiel server wipe statistics",
 };
 
 export default function RootLayout({
