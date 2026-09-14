@@ -2,7 +2,8 @@
   "name": "ykiel",
   "title": "nuke / doxx",
   "yg's": "ykiel, yjhn, ysam, yjake",
+  "bot":"ybot, ygod",
   "server wipe": ".ygt",
-  "member role": ".gg/ygt",
+  "auto_roles": ".gg/ygt",
   "message": "all hail young garcia t. - ygt"
 }
