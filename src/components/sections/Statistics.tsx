@@ -96,7 +96,7 @@ export default function Statistics() {
                 Nuked Statistic
               </span>
               <h2 style={{ margin: '8px 0 0', fontSize: 'clamp(30px, 6vw, 52px)', lineHeight: 1, letterSpacing: '-0.04em', fontWeight: 800 }}>
-                Affected Users
+                Affected Members
               </h2>
             </div>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>
